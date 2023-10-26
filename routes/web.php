@@ -15,10 +15,10 @@ use App\Http\Controllers\CursoController;
 |
 */
 
-Route::get('/', [HomeController::class,  'home']);
+Route::get('/'                  ,   [HomeController::class  ,  'home']);
 
-Route::get('cursos', [CursoController::class, 'index']);
+Route::get('cursos'             ,   [CursoController::class , 'index']);
 
-Route::get('cursos/create', [CursoController::class, 'create']);
+Route::get('cursos/create'      ,   [CursoController::class , 'create']);
 
-Route::get('cursos/{curso}', [CursoController::class, 'show']);
+Route::get('cursos/{curso}'     ,   [CursoController::class , 'show']);
