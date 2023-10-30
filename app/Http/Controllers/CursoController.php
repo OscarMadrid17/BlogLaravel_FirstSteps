@@ -22,13 +22,22 @@ class CursoController extends Controller
 
     public function store(StoreCurso $request){
 
-        $curso = new Curso();
+        // $curso = new Curso();
 
-        $curso->name        = $request->name;
-        $curso->descripcion = $request->descripcion;
-        $curso->categoria   = $request->categoria;
+        // $curso->name        = $request->name;
+        // $curso->descripcion = $request->descripcion;
+        // $curso->categoria   = $request->categoria;
 
-        $curso->save();
+        // $curso->save();
+
+        // return $request->all();
+
+        // $curso = Curso::create([
+        //     'name'          =>$request->name,
+        //     'descripcion'   =>$request->descripcion,
+        //     'categoria'     =>$request->categoria
+        // ]);
+        $curso = Curso::Create($request->all()); //De esta manera podemos guardar todos los campos en nuestras tablas como se visualiza en las lineas de codigo superiores, pero de manera automatica y en una sola linea de codigo -> hay que asignar los campos que se van a llenar en el modelo curso con la propiedad $fillable
 
         return redirect()->route('cursos.show', $curso->id);
     }
@@ -45,11 +54,13 @@ class CursoController extends Controller
 
     public function update(StoreCursoUpdate $request,Curso $curso){
 
-        $curso->name        = $request->name;
-        $curso->descripcion = $request->descripcion;
-        $curso->categoria   = $request->categoria;
+        // $curso->name        = $request->name;
+        // $curso->descripcion = $request->descripcion;
+        // $curso->categoria   = $request->categoria;
 
-        $curso->save();
+        // $curso->save();
+
+        $curso->update($request->all()); //Asignacion masiva que ejecuta el mismo procedimiento que las lineas de codigo comentadas de arriba
 
         return redirect()->route('cursos.show', $curso->id);
     }
