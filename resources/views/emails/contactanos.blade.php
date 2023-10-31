@@ -7,8 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Correo electronico</h1>
-    <p>Este es el primer correo que mandamos por Laravel</p>
+    <h1>ASI Network</h1>
+    <p>Gracias por escribirnos, su solicitud esta en proceso</p>
+
+    <p><strong>Nombre</strong>{{$data['name']}}</p>
+    <p><strong>Nombre</strong>{{$data['correo']}}</p>
+    <p><strong>Nombre</strong>{{$data['mensaje']}}</p>
 
 </body>
 </html>
